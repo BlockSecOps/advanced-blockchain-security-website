@@ -1,0 +1,125 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
+import { Button, Card, Badge } from '@/components/ui'
+
+const stats = [
+  { value: '25+', label: 'Security Tools Unified' },
+  { value: '68%', label: 'Tool Coverage' },
+  { value: '509', label: 'Detectors' },
+]
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    },
+  },
+}
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+}
+
+export function Hero() {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-mesh animate-gradient bg-[length:600%_600%] overflow-hidden">
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 grid-pattern opacity-30" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 pt-32 pb-20 text-center">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="space-y-8"
+        >
+          {/* Badge */}
+          <motion.div variants={item}>
+            <Badge variant="default" className="mb-4">
+              Enterprise Blockchain DevSecOps Platform
+            </Badge>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            variants={item}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-hero font-bold font-display leading-tight"
+          >
+            Unified Smart Contracts
+            <br />
+            <span className="gradient-text">
+              DevSecOps Platform
+            </span>
+          </motion.h1>
+
+          {/* Subheadline */}
+          <motion.p
+            variants={item}
+            className="text-lg sm:text-xl md:text-2xl text-white/70 max-w-3xl mx-auto"
+          >
+            Track smart contract vulnerabilities across your entire blockchain development lifecycle with comprehensive security metrics, analytics, and audit-ready reporting. <a href="https://blocksecops.com" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 transition-colors font-semibold">BlockSecOps</a> unifies open source security tools into a single enterprise DevSecOps platform, delivering actionable insights and compliance dashboards from pre-commit through CI/CD to production.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            variants={item}
+            className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
+          >
+            <Button variant="primary" size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+              Request a Demo
+            </Button>
+            <Button variant="secondary" size="lg" onClick={() => window.location.href = '/consulting'}>
+              DevSecOps Consulting
+            </Button>
+          </motion.div>
+
+          {/* Stats Cards */}
+          <motion.div
+            variants={container}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto pt-12"
+          >
+            {stats.map((stat, index) => (
+              <motion.div key={stat.label} variants={item}>
+                <Card
+                  variant="glass"
+                  className="text-center hover:shadow-glow transition-all duration-300"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-primary-400 mb-2">
+                    {stat.value}
+                  </div>
+                  <p className="text-sm md:text-base text-white/70">{stat.label}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 1.5,
+          duration: 0.5,
+          repeat: Infinity,
+          repeatType: 'reverse',
+          repeatDelay: 1,
+        }}
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 cursor-pointer pointer-events-none"
+      >
+        <div className="flex flex-col items-center gap-2 text-white/40 hover:text-primary-400 transition-colors">
+          <span className="text-sm font-medium">Scroll to explore</span>
+          <ChevronDown className="w-6 h-6" />
+        </div>
+      </motion.div>
+    </section>
+  )
+}

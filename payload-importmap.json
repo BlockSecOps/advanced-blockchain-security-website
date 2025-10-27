@@ -1,0 +1,6 @@
+{
+  "@/components/payload/ConditionalSubcategorySelect#ConditionalSubcategorySelect": {
+    "path": "@/components/payload/ConditionalSubcategorySelect",
+    "exportName": "ConditionalSubcategorySelect"
+  }
+}

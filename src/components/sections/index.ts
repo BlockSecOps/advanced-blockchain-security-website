@@ -1,0 +1,7 @@
+export { Hero } from './Hero'
+export { Services } from './Services'
+export { Products } from './Products'
+export { Contact } from './Contact'
+export { ConsultingHero } from './ConsultingHero'
+export { ConsultingServices } from './ConsultingServices'
+export { ConsultingProcess } from './ConsultingProcess'

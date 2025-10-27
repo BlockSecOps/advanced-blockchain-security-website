@@ -1,0 +1,31 @@
+export function Logo({ width = 40, height = 40, className = '' }: { width?: number; height?: number; className?: string }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 200 200"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <defs>
+        <linearGradient id="blockchain2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: '#818CF8', stopOpacity: 1 }} />
+          <stop offset="50%" style={{ stopColor: '#6366F1', stopOpacity: 1 }} />
+          <stop offset="100%" style={{ stopColor: '#2DD4BF', stopOpacity: 1 }} />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="10" fill="none" stroke="url(#blockchain2Grad)" strokeWidth="2.5" />
+      <circle cx="70" cy="70" r="8" fill="none" stroke="url(#blockchain2Grad)" strokeWidth="2" />
+      <circle cx="130" cy="70" r="8" fill="none" stroke="url(#blockchain2Grad)" strokeWidth="2" />
+      <circle cx="145" cy="115" r="8" fill="none" stroke="url(#blockchain2Grad)" strokeWidth="2" />
+      <circle cx="100" cy="145" r="8" fill="none" stroke="url(#blockchain2Grad)" strokeWidth="2" />
+      <circle cx="55" cy="115" r="8" fill="none" stroke="url(#blockchain2Grad)" strokeWidth="2" />
+      <line x1="77" y1="77" x2="93" y2="93" stroke="url(#blockchain2Grad)" strokeWidth="1.5" opacity="0.5" />
+      <line x1="123" y1="77" x2="107" y2="93" stroke="url(#blockchain2Grad)" strokeWidth="1.5" opacity="0.5" />
+      <line x1="138" y1="110" x2="110" y2="100" stroke="url(#blockchain2Grad)" strokeWidth="1.5" opacity="0.5" />
+      <line x1="100" y1="137" x2="100" y2="110" stroke="url(#blockchain2Grad)" strokeWidth="1.5" opacity="0.5" />
+      <line x1="62" y1="110" x2="90" y2="100" stroke="url(#blockchain2Grad)" strokeWidth="1.5" opacity="0.5" />
+    </svg>
+  )
+}
