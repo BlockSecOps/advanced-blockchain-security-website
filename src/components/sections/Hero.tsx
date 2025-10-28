@@ -43,7 +43,7 @@ export function Hero() {
           {/* Badge */}
           <motion.div variants={item}>
             <Badge variant="default" className="mb-4">
-              Enterprise Blockchain DevSecOps Platform
+              Advanced Blockchain Security Presents
             </Badge>
           </motion.div>
 
@@ -52,11 +52,11 @@ export function Hero() {
             variants={item}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-hero font-bold font-display leading-tight"
           >
-            Unified Smart Contracts
-            <br />
             <span className="gradient-text">
-              DevSecOps Platform
+              BlockSecOps
             </span>
+            <br />
+            Enterprise DevSecOps Platform
           </motion.h1>
 
           {/* Subheadline */}
@@ -64,7 +64,7 @@ export function Hero() {
             variants={item}
             className="text-lg sm:text-xl md:text-2xl text-white/70 max-w-3xl mx-auto"
           >
-            Track smart contract vulnerabilities across your entire blockchain development lifecycle with comprehensive security metrics, analytics, and audit-ready reporting. <a href="https://blocksecops.com" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 transition-colors font-semibold">BlockSecOps</a> unifies open source security tools into a single enterprise DevSecOps platform, delivering actionable insights and compliance dashboards from pre-commit through CI/CD to production.
+            Cut security review time by 70% while catching more vulnerabilities. BlockSecOps unifies 25+ industry-leading scanners with 509 detectors, delivering actionable insights through real-time security dashboards and native CI/CD integration. Reduce false positives by 95% and monitor your security posture from pre-commit to production.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -72,11 +72,11 @@ export function Hero() {
             variants={item}
             className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
           >
-            <Button variant="primary" size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-              Request a Demo
+            <Button variant="primary" size="lg" onClick={() => window.location.href = 'https://blocksecops.com'}>
+              Explore BlockSecOps
             </Button>
             <Button variant="secondary" size="lg" onClick={() => window.location.href = '/consulting'}>
-              DevSecOps Consulting
+              Consulting Services
             </Button>
           </motion.div>
 
