@@ -1,33 +1,39 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Zap, Shield, Package } from 'lucide-react'
+import { Shield, Layers, Activity, Zap, BarChart3, GitBranch } from 'lucide-react'
 import { Card, Button } from '@/components/ui'
 
-const products = [
+const features = [
+  {
+    icon: Layers,
+    title: '25+ Integrated Scanners',
+    description: 'Unified platform consolidating Slither, Mythril, Aderyn, Semgrep, and 20+ more security tools',
+  },
   {
     icon: Zap,
-    name: 'BlockSecOps Platform',
-    description: 'The first unified security operations platform for enterprise Solidity development',
-    features: ['25+ integrated security tools', 'Real-time WebSocket updates', 'Multi-language support', 'Enterprise RBAC & compliance'],
-    href: 'https://blocksecops.com',
-    buttonText: 'Download Now',
+    title: 'Real-Time Analysis',
+    description: 'Lightning-fast scans with WebSocket live updates. Quick scans in ~30s, deep analysis in ~15 min',
   },
   {
     icon: Shield,
-    name: 'SolidityDefend',
-    description: 'High-performance static analysis tool built with Rust',
-    features: ['100+ security detectors', 'Lightning-fast scanning', 'CI/CD integration', 'Modern attack patterns'],
-    href: 'https://github.com/BlockSecOps/SolidityDefend',
-    buttonText: 'Download Now',
+    title: '509 Security Detectors',
+    description: 'Comprehensive coverage across Solidity, Vyper, Rust/Solana, Cairo, and Move smart contracts',
   },
   {
-    icon: Package,
-    name: 'SolidityBOM',
-    description: 'Software Bill of Materials generator for smart contracts',
-    features: ['Automatic project detection', 'Complete dependency tracking', 'CycloneDX format', 'Sub-5 second analysis'],
-    href: '#contact',
-    buttonText: 'Request Beta',
+    icon: BarChart3,
+    title: 'Security Dashboards',
+    description: 'Real-time metrics, analytics, and audit-ready compliance reporting for SOC 2, ISO 27001, NIST',
+  },
+  {
+    icon: Activity,
+    title: 'AI-Powered Intelligence',
+    description: 'Reduce false positives by 95% with machine learning that correlates findings across tools',
+  },
+  {
+    icon: GitBranch,
+    title: 'Native CI/CD Integration',
+    description: 'Seamless integration with GitHub, GitLab, and Jenkins for automated security in your pipeline',
   },
 ]
 
@@ -44,44 +50,57 @@ export function Products() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display mb-6">
-            Our <span className="text-secondary-400">Products</span>
+            Introducing <span className="text-secondary-400">BlockSecOps</span>
           </h2>
           <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto">
-            Enterprise-grade security tools and consulting services for modern Web3 development teams
+            The industry's first unified DevSecOps platform for enterprise blockchain development
           </p>
         </motion.div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {products.map((product, index) => (
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {features.map((feature, index) => (
             <motion.div
-              key={product.name}
+              key={feature.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full flex flex-col">
-                <div className="mb-6 w-16 h-16 bg-gradient-to-br from-primary-600 to-secondary-500 rounded-2xl flex items-center justify-center shadow-glow">
-                  <product.icon className="w-8 h-8 text-white" />
+              <Card className="h-full">
+                <div className="mb-4 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
+                  <feature.icon className="w-6 h-6 text-primary-400" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{product.name}</h3>
-                <p className="text-white/60 mb-6">{product.description}</p>
-                <ul className="space-y-3 mb-8 flex-1">
-                  {product.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-white/70">
-                      <div className="w-1.5 h-1.5 bg-primary-400 rounded-full mr-3" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button variant="secondary" className="w-full" onClick={() => window.location.href = product.href}>
-                  {product.buttonText}
-                </Button>
+                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+                <p className="text-white/60 leading-relaxed">{feature.description}</p>
               </Card>
             </motion.div>
           ))}
         </div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="text-center"
+        >
+          <Card variant="glass" className="inline-block px-12 py-8">
+            <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Smart Contract Security?</h3>
+            <p className="text-white/70 mb-6 max-w-2xl">
+              Join leading Web3 teams who trust BlockSecOps to secure their blockchain applications
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="primary" size="lg" onClick={() => window.location.href = 'https://blocksecops.com'}>
+                Explore BlockSecOps
+              </Button>
+              <Button variant="secondary" size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+                Request Demo
+              </Button>
+            </div>
+          </Card>
+        </motion.div>
       </div>
     </section>
   )
