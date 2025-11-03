@@ -3,17 +3,16 @@ import { Logo } from '@/components/Logo'
 
 const footerLinks = {
   solutions: [
-    { name: 'Unified Scanning', href: '#services' },
-    { name: 'CI/CD Integration', href: '#services' },
-    { name: 'Unified Intelligence', href: '#services' },
-    { name: 'Compliance Automation', href: '#services' },
-    { name: 'Multi-Language Support', href: '#services' },
-    { name: 'Web3 DevSecOps Consulting', href: '#services' },
+    { name: 'Unified Scanning', href: 'https://blocksecops.com' },
+    { name: 'CI/CD Integration', href: 'https://blocksecops.com' },
+    { name: 'Unified Intelligence', href: 'https://blocksecops.com' },
+    { name: 'Compliance Automation', href: 'https://blocksecops.com' },
+    { name: 'Multi-Language Support', href: 'https://blocksecops.com' },
+    { name: 'Web3 DevSecOps Consulting', href: 'https://advancedblockchainsecurity.com/consulting' },
   ],
   products: [
     { name: 'BlockSecOps Platform', href: 'https://blocksecops.com' },
-    { name: 'SolidityDefend', href: 'https://github.com/soliditydefend' },
-    { name: 'SolidityBOM', href: 'https://github.com/soliditybom' },
+    { name: 'SolidityDefend', href: 'https://github.com/BlockSecOps/SolidityDefend' },
   ],
   resources: [
     { name: 'Documentation', href: 'https://blocksecops.com/docs' },
