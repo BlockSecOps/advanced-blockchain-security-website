@@ -8,7 +8,7 @@ const features = [
   {
     icon: Layers,
     title: '25+ Integrated Scanners',
-    description: 'Unified platform consolidating Slither, Mythril, Aderyn, Semgrep, and 20+ more security tools',
+    description: 'Unified platform consolidating SolidityDefend, Slither, Aderyn, Semgrep, Solhint, Halmos, Echidna, Wake, Medusa, and 16+ more security tools',
   },
   {
     icon: Zap,

@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/consulting',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
+    lastModified: new Date().toISOString(),
     changeFrequency: 'weekly' as const,
     priority: route === '' ? 1 : 0.8,
   }))
@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/wiki/integer-overflow',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
+    lastModified: new Date().toISOString(),
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }))
